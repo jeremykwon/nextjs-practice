@@ -2,13 +2,10 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-// component
-import { Header } from "@/components";
-
 export default function Home() {
   const router = useRouter();
-  console.log(router);
 
+  //! router를 통한 페이지 이동방법
   const moveTestPage = () => {
     // router.push("test", "mask-url-router");
     router.push(
@@ -23,9 +20,8 @@ export default function Home() {
   return (
     <>
       <div>
-        <Header />
         <h1>메인페이지입니다.</h1>
-        <Link href="/test" as="mask-url-link">
+        <Link href="/test?param1=test1">
           {`<Link>`}를 사용한 테스트페이지로 이동
         </Link>
 
