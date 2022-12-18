@@ -10,6 +10,17 @@ app
   .then(() => {
     const server = express();
 
+    // server.get("/mask-url-router/:id", (req, res) => {
+    //   const actualPage = "/test";
+    //   const queryParams = { ppram: req.params.id };
+    //   app.render(req, res, actualPage, queryParams);
+    // });
+
+    server.get("/mask-url-router", (req, res) => {
+      const actualPage = "/test";
+      app.render(req, res, actualPage);
+    });
+
     server.get("*", (req, res) => {
       return handle(req, res);
     });
